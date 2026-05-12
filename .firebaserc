@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "riff-app-d747b"
+  },
+  "targets": {
+    "riff-app-d747b": {
+      "hosting": {
+        "riff-app-landing-page": [
+          "riff-app-landing-page"
+        ]
+      }
+    }
+  }
+}
