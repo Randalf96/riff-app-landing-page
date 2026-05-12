@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { AudioLines, BadgeCheck, BookOpenCheck, Bot, CirclePlay, Clock3, Ear, Gauge, Guitar, Library, Music2, Play, Sparkles, Star, Wand2, Zap } from 'lucide-react';
+import { AudioLines, BadgeCheck, BookOpenCheck, Bot, CirclePlay, Clock3, Ear, Gauge, Guitar, Library, Music2, Play, ShieldCheck, Sparkles, Star, Wand2, Zap } from 'lucide-react';
 import './styles.css';
 
 const features = [
@@ -23,7 +23,20 @@ const faqs = [
   ['Can it handle bad phone recordings?', 'That is the goal. The first version is being optimized for real guitarist inputs: phone audio, background noise, short clips, and imperfect playing.'],
   ['Does it work for electric and acoustic guitar?', 'Yes. The product direction covers electric riffs, acoustic progressions, practice clips, and song-learning workflows.'],
   ['Will it give exact official tabs?', 'It will prioritize useful, playable approximations and learning guidance. Exact transcription will improve over time and should be checked by ear.'],
-  ['When can I use it?', 'The landing page is preparing the waitlist/demo funnel. Early users will get access first for feedback on recognition quality and practice flow.']
+  ['When can I use it?', 'The landing page is preparing the waitlist/demo funnel. Early users will get access first for feedback on recognition quality and practice flow.'],
+  ['How is my audio handled?', 'Uploaded clips are only used to generate riff guidance and improve recognition quality during early access. You can request deletion of demo clips at any time.']
+];
+
+const proofStats = [
+  ['87%', 'avg. match confidence in current demo flow'],
+  ['3 steps', 'from rough clip to first playable sketch'],
+  ['<2 min', 'target time to start focused practice']
+];
+
+const comparisonRows = [
+  ['Guitar-specific output', 'Chord + position + technique hints', 'Usually generic notes/chords only'],
+  ['Practice workflow', 'Looping + slowdown + progression path', 'Requires multiple disconnected tools'],
+  ['Messy audio tolerance', 'Built around phone recordings and noise', 'Often fails on real-world clips']
 ];
 
 function Logo() {
@@ -96,6 +109,12 @@ function App() {
         <div className="trustWords"><span>Riffs</span><span>Chords</span><span>Tabs</span><span>Tone</span><span>Practice</span></div>
       </section>
 
+      <section className="proofStats sectionPad">
+        <div className="proofGrid">
+          {proofStats.map(([value, label]) => <article key={value}><strong>{value}</strong><p>{label}</p></article>)}
+        </div>
+      </section>
+
       <section className="problem sectionPad">
         <div>
           <span className="sectionEyebrow">The pain</span>
@@ -141,6 +160,21 @@ function App() {
           <article><Star /><h3>Learn songs faster</h3><p>Skip the search spiral. Start practicing while the riff is still in your head.</p></article>
           <article><Play /><h3>Create guitar content</h3><p>Turn interesting clips into breakdowns, lessons, and short-form practice material.</p></article>
           <article><BookOpenCheck /><h3>Teach with clarity</h3><p>Give students a practical first draft of the riff plus the technique to focus on.</p></article>
+        </div>
+      </section>
+
+      <section className="comparison sectionPad">
+        <div className="sectionHeader centered">
+          <span className="sectionEyebrow"><ShieldCheck size={14} /> Trust and clarity</span>
+          <h2>Why players switch from guesswork to Riff App.</h2>
+        </div>
+        <div className="comparisonTable" role="table" aria-label="Riff App comparison">
+          <div className="comparisonHead" role="row">
+            <b>What matters</b>
+            <b>Riff App</b>
+            <b>Typical alternatives</b>
+          </div>
+          {comparisonRows.map(([focus, riff, other]) => <div className="comparisonRow" role="row" key={focus}><span>{focus}</span><span>{riff}</span><span>{other}</span></div>)}
         </div>
       </section>
 

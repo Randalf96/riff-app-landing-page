@@ -98,6 +98,11 @@ h3 { letter-spacing: -.035em; }
 .trustStrip { width: min(1160px, calc(100% - 32px)); margin: 0 auto; border-block: 1px solid var(--line); padding: 28px 0; display: flex; align-items: center; justify-content: space-between; gap: 28px; color: var(--muted); }
 .trustStrip p { margin: 0; max-width: 480px; }
 .trustWords { display: flex; flex-wrap: wrap; gap: 14px; font: 800 13px Geist Mono, monospace; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); opacity: .72; }
+.proofStats { padding-top: 46px; padding-bottom: 22px; }
+.proofGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.proofGrid article { border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); padding: 24px; }
+.proofGrid strong { display: block; font-size: clamp(38px, 6vw, 62px); line-height: .92; letter-spacing: -.05em; margin-bottom: 8px; }
+.proofGrid p { margin: 0; color: var(--muted); line-height: 1.5; }
 
 .problem { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: start; }
 .problemGrid, .featureGrid, .caseGrid, .quoteGrid { display: grid; gap: 16px; }
@@ -123,6 +128,13 @@ h3 { letter-spacing: -.035em; }
 .caseGrid article { min-height: 230px; }
 blockquote { margin: 0; font-size: 20px; color: var(--ink); }
 blockquote cite { display: block; margin-top: 18px; color: var(--amber); font-style: normal; font-size: 14px; font-weight: 800; }
+.comparison { padding-top: 54px; }
+.comparisonTable { border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: rgba(255,255,255,.04); }
+.comparisonHead, .comparisonRow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; padding: 18px 20px; }
+.comparisonHead { background: rgba(255,179,59,.12); font: 700 13px/1.2 Geist Mono, monospace; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+.comparisonRow { border-top: 1px solid var(--line); }
+.comparisonRow span { color: var(--muted); line-height: 1.5; }
+.comparisonRow span:nth-child(2) { color: var(--ink); font-weight: 600; }
 
 .faq { width: min(860px, calc(100% - 32px)); }
 .faqList { display: grid; gap: 12px; }
@@ -145,7 +157,8 @@ footer a:hover { color: var(--ink); }
   .hero { padding-top: 54px; text-align: center; }
   .heroText, .proofLine, .ctaRow { justify-content: center; margin-inline: auto; }
   .heroVisual { min-height: 610px; }
-  .featureGrid, .caseGrid, .quoteGrid { grid-template-columns: 1fr; }
+  .featureGrid, .caseGrid, .quoteGrid, .proofGrid { grid-template-columns: 1fr; }
+  .comparisonHead, .comparisonRow { grid-template-columns: 1fr; gap: 6px; }
   .trustStrip, footer { flex-direction: column; text-align: center; }
   .problem { gap: 24px; }
 }
